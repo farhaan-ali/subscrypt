@@ -35,7 +35,7 @@ func SendEmail(reminder reminder.Reminder, user userprofile.Userprofile, event *
 		return fmt.Errorf("no subscription found for ID: %v", reminder.SubscriptionID)
 	}
 
-	from := mail.NewEmail("Subscrypt Team", "team@subscrypt.com")
+	from := mail.NewEmail("Subscrypt Team", "farhaan@farhaanali.com")
 	subject := fmt.Sprintf("Your %s subscription is due for renewal on %v", subscription.Name, subscription.DateDue.Format(timeLayout))
 	to := mail.NewEmail(user.Name, reminder.Email)
 	plainTextContent := fmt.Sprintf("Hey there %s!\nYou asked for a reminder and here it is!", user.Name)
